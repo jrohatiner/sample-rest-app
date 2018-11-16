@@ -1,29 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemsSearchComponent } from './items-search.component';
+import { WidgetsSearchComponent } from './widgets-search.component';
 import { AppMaterialModule } from '../../app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ItemsService } from '../../shared/items.service';
+import { WidgetsService } from '../../shared/widgets.service';
 
-class ItemsServiceStub {}
+class WidgetsServiceStub {}
 
 describe('WidgetsSearchComponent', () => {
-  let component: ItemsSearchComponent;
-  let fixture: ComponentFixture<ItemsSearchComponent>;
+  let component: WidgetsSearchComponent;
+  let fixture: ComponentFixture<WidgetsSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppMaterialModule, BrowserAnimationsModule],
-      declarations: [ ItemsSearchComponent ],
+      declarations: [ WidgetsSearchComponent ],
       providers: [
-        {provide: ItemsService, useClass: ItemsServiceStub}
+        {provide: WidgetsService, useClass: WidgetsServiceStub}
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemsSearchComponent);
+    fixture = TestBed.createComponent(WidgetsSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

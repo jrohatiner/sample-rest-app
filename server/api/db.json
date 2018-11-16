@@ -32,16 +32,11 @@
     },
     {
       "id": 7,
-      "name": "Violet Item",
+      "name": "Violet",
       "description": "This is a violet item"
     }
   ],
   "widgets": [
-    {
-      "id": 1,
-      "name": "Red Widget",
-      "description": "This is a red widget"
-    },
     {
       "id": 2,
       "name": "Orange Widget",
@@ -69,8 +64,13 @@
     },
     {
       "id": 7,
-      "name": "Violet Widget",
+      "name": "Violet",
       "description": "This is a violet widget"
+    },
+    {
+      "id": 8,
+      "name": "Red",
+      "description": "This is a red widget"
     }
   ]
 }

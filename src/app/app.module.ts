@@ -17,9 +17,12 @@ import { ItemsSearchComponent } from './items/items-search/items-search.componen
 import { WidgetsComponent } from './widgets/widgets.component';
 import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
 import { WidgetDetailComponent } from './widgets/widget-detail/widget-detail.component';
+import { WidgetsSearchComponent } from './widgets/widgets-search/widgets-search.component';
 import { HomeComponent } from './home/home.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ItemComponent } from './items/item/item.component';
+import {WidgetComponent} from './widgets/widget/widget.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +35,10 @@ import { ItemComponent } from './items/item/item.component';
     WidgetsComponent,
     WidgetsListComponent,
     WidgetDetailComponent,
+    WidgetsSearchComponent,
     NewsletterComponent,
-    ItemComponent
+    ItemComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserAnimationsModule,

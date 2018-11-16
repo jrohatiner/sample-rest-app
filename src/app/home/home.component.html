@@ -5,7 +5,10 @@
   </div>
 
   <div class="col-50">
-    <app-newsletter></app-newsletter>
+    <app-widgets-search (onResults)="handleResults($event)"></app-widgets-search>
     <app-widgets-list [widgets]="widgets" [readonly]="true"></app-widgets-list>
   </div>
+  <app-newsletter></app-newsletter>
 </div>
+
+

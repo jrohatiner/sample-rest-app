@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemComponent } from './item.component';
-import { ItemDetailComponent } from '../item-detail/item-detail.component';
+import { WidgetComponent } from './widget.component';
+import { WidgetDetailComponent } from '../widget-detail/widget-detail.component';
 import { AppMaterialModule } from '../../app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { ItemsService } from '../../shared/items.service';
+import { WidgetsService } from '../../shared/widgets.service';
 import { ActivatedRoute } from '@angular/router';
 import { ActivatedRouteStub } from '../../../testing/router.stubs';
 
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/switchMap';
 
-class ItemsServiceStub {
+class WidgetServiceStub {
   load() {
     return Observable.of({})
   }
@@ -21,15 +21,15 @@ class ItemsServiceStub {
 
 
 describe('WidgetComponent', () => {
-  let component: ItemComponent;
-  let fixture: ComponentFixture<ItemComponent>;
+  let component: WidgetComponent;
+  let fixture: ComponentFixture<WidgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppMaterialModule, BrowserAnimationsModule, FormsModule],
-      declarations: [ ItemComponent, ItemDetailComponent ],
+      declarations: [ WidgetComponent, WidgetDetailComponent ],
       providers: [
-        {provide: ItemsService, useClass: ItemsServiceStub},
+        {provide: WidgetsService, useClass: WidgetServiceStub},
         {provide: ActivatedRoute, useClass: ActivatedRouteStub}
       ]
     })
@@ -38,7 +38,7 @@ describe('WidgetComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed
-      .createComponent(ItemComponent);
+      .createComponent(WidgetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

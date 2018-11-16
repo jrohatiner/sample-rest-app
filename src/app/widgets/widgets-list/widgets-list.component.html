@@ -5,8 +5,8 @@
     </md-card-title>
   </md-card-header>
   <md-card-content>
-    <md-list>
-      <md-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
+    <md-list [@listAnimation]="prepareListState()" [@.disabled]="animationsDisabled">
+      <md-list-item *ngFor="let widget of widgets; trackBy: trackWidget" (click)="selected.emit(widget)" class="record">
         <h3 md-line>{{widget.name}}</h3>
         <button *ngIf="!readonly" md-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
           <md-icon>close</md-icon>

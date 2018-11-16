@@ -33,7 +33,9 @@ export class HomeComponent implements OnInit {
       .subscribe(widgets => this.widgets = widgets);
   }
 
-  handleResults(items) {
+  handleResults(items, widgets) {
     this.items = items;
+    this.widgets = widgets;
   }
+
 }

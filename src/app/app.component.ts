@@ -11,7 +11,7 @@ import { NotificationsService } from './shared/notifications.service';
   animations: [ROUTER_ANIMATION]
 })
 export class AppComponent implements OnInit {
-  title = 'Angular REST App';
+  title = 'Sample REST App';
   links = [
     { path: '/home', icon: 'home', label: 'Home'},
     { path: '/items', icon: 'list', label: 'Items'},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WidgetsService, Widget } from '../shared';
-import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationsService } from '../shared/notifications.service';
 
 @Component({
   selector: 'app-widgets',
@@ -11,7 +11,7 @@ export class WidgetsComponent implements OnInit {
   widgets: Widget[];
   currentWidget: Widget;
 
-  constructor(private widgetsService: WidgetsService) { }
+  constructor(private widgetsService: WidgetsService, private ns: NotificationsService) { }
 
   ngOnInit() {
     this.getWidgets();
@@ -46,6 +46,7 @@ export class WidgetsComponent implements OnInit {
   createWidget(widget) {
     this.widgetsService.create(widget)
       .subscribe(response => {
+        this.ns.emit('Widget created!');
         this.getWidgets();
         this.resetCurrentWidget();
       });
@@ -54,6 +55,7 @@ export class WidgetsComponent implements OnInit {
   updateWidget(widget) {
     this.widgetsService.update(widget)
       .subscribe(response => {
+        this.ns.emit('Widget updated!');
         this.getWidgets();
         this.resetCurrentWidget();
       });
@@ -62,6 +64,7 @@ export class WidgetsComponent implements OnInit {
   deleteWidget(widget) {
     this.widgetsService.delete(widget)
       .subscribe(response => {
+        this.ns.emit('Widget deleted!');
         this.getWidgets();
         this.resetCurrentWidget();
       });

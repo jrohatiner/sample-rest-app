@@ -1,4 +1,4 @@
-import { Http, Headers } from '@angular/http';
+import {Http, Headers, URLSearchParams} from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Widget } from './widget.model';
 import 'rxjs/add/operator/map';
@@ -32,6 +32,13 @@ export class WidgetsService {
 
   delete(widget: Widget) {
     return this.http.delete(`${BASE_URL}${widget.id}`)
+      .map(res => res.json());
+  }
+  search(term: string) {
+    const search = new URLSearchParams();
+    search.set('q', term);
+
+    return this.http.get(`${BASE_URL}`, {search})
       .map(res => res.json());
   }
 }
